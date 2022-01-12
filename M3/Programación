@@ -1,1 +1,120 @@
+PROGRAMACIÓN
+flag_0 = True
+flag_1 = False
+flag_2 = False
+flag_3 = False
+flag_4 = False
+flag_5 = False
+users = {}
+while True:
+    while flag_0 == True:
+        print("EN BUSCA DE LA PRINCESA\n\n1)Login\n2)Create user\n3)Replay Adventure\n4)Reports\n5)Exit\n")
+        opc = input("Option: ")
+        print()
+        if opc.isalpha() or int(opc)<1 or int(opc)>5:
+            print("="*10+"INVALID"+"="*10)
+        else:
+            opc = int(opc)
+            if opc == 1:
+                flag_0 = False
+                flag_1 = True
+            if opc == 2:
+                flag_0 = False
+                flag_2 = True
+            if opc == 3:
+                flag_0 = False
+                flag_3 = True
+            if opc == 4:
+                flag_0 = False
+                flag_4 = True
+            if opc == 5:
+                flag_0 = False
+                flag_5 = True
+    while flag_1 == True:
+        username = input("Username: ")
+        password = input("Password: ")
+        if username not in users or password not in users:
+            print("The username or password did not find")
+        else:
+            print(f"Hello {username}, lets play!!\nWhat adventure do you want to play?\n\n")
 
+
+    while flag_2 == True:
+        newUser = input("Username: ")
+        if not newUser.isalnum():
+            print("The username have to be alphanumeric")
+        elif len(newUser) > 11 or len(newUser) < 5:
+            print("Length of username have to be longer than 5 and shorter than 11")
+        else:
+            while True:
+                newPassword = input("Password: ")
+                mayusculas = 0
+                minusculas = 0
+                numeros = 0
+                espacios = 0
+                error = 0
+                for char in newPassword:
+                    if char.islower():
+                        minusculas = minusculas + 1
+                    if char.isupper():
+                        mayusculas = mayusculas + 1
+                    if char.isdigit():
+                        numeros = numeros + 1
+                    if char.isspace():
+                        espacios = espacios + 1
+                if len(newPassword) < 8 or len(newPassword) > 12:
+                    print("Length of password is not correct")
+                    error = 1
+                elif newPassword.isalnum():
+                    print("Password has to contain some especial character")
+                    error = 1
+                elif minusculas == 0:
+                    print("Password has to include some uppercase and some lowercase")
+                    error = 1
+                elif mayusculas == 0:
+                    print("Password has to include some uppercase and some lowercase")
+                    error = 1
+                elif numeros == 0:
+                    print("Password has to contain some digit")
+                    error = 1
+                elif espacios != 0:
+                    print("Password cannot contain spaces")
+                    error = 1
+                elif error == 0:
+                    users[newPassword] = newUser
+                    print("\nUser CREATED\n\nEnter to continue")
+                    input()
+                    flag_2 = False
+                    flag_0 = True
+                    break
+
+    while flag_3 == True:
+        input("Press enter to continue")
+        break
+
+    while flag_4 == True:
+        print("1)Most used answer\n2)Player with more games played\n3)Games played by user\n4)Back\n")
+        opc = input("Option: ")
+        print()
+        if opc.isalpha():
+            print("=" * 10 + "INVALID" + "=" * 10)
+        elif int(opc) < 1 or int(opc) > 4:
+            print("=" * 10 + "INVALID" + "=" * 10)
+        else:
+            opc = int(opc)
+            if opc == 1:
+                print(1)
+            elif opc == 2:
+                print(2)
+            elif opc == 3:
+                print(3)
+            elif opc == 4:
+                flag_3 = False
+                flag_0 = True
+                break
+
+    while flag_5 == True:
+        print("="*10 +"END"+"="*10)
+        break
+    if opc == 5:
+        break
