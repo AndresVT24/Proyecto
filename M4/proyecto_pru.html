@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Yuji+Mai&display=swap" rel="stylesheet"> 
   <meta charset="utf-8">
   <title>Constantine</title>
   <style type="text/css">
@@ -77,6 +80,7 @@
     .bordes_del_de_fin{
       border-bottom: 1px solid white;
     }
+    /* estilo de bloques con texto */
     .bordes_gra_nom{
       color: black;
       font-family: roboto;
@@ -91,6 +95,7 @@
       text-align: left;
       margin: 0px;
     }
+
     .bordes_iz_nom{
       box-sizing: border-box;
       color: rgb(0, 0, 0);
@@ -103,11 +108,59 @@
       margin-left: 0px;
       margin-right: 0px;
       margin-top: 0px;
-      text-align: justify
+      text-align: justify;
     }
+    /**************************************/
+    /* estilo de pie*/
+    #contenedor_de_footer{
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 80%;
+      grid-gap: 0px;
+      padding-left:15%;
+      padding-right: 15%;
+    }
+    .fot_titu{
+      padding-top: 100px;
+      padding-bottom: 30px;
+      text-align: center;
+      font-family: Roboto;
+      font-size: 60px;
+      color: black;
+
+    }
+    #tine{
+      font-family: 'Yuji Mai', serif;
+    }
+    .fila_redes{
+      display: flex;
+      font-family: Roboto;
+      justify-content: flex-end;
+      padding-bottom: 40px;
+      font-size: 10px;
+      gap: 5px;
+      padding-right: 15%;
+    }
+    .fila_contacto{
+      display: flex;
+      font-family: Roboto;
+      justify-content: flex-start;
+      padding-bottom: 40px;
+      font-size: 10px;
+      gap: 5px;
+      padding-left: 15%;
+    }
+
+    /**************************************/
   </style>
+
 </head>
 <body>
+  <!---- Espacio en blanco ---->
+
+  <!---- **************************************---->
+
+  <!---- Portada ---->  
   <div id="contenedor_titulo_1">
     <div id="conte">
       <div class="linea">
@@ -130,7 +183,6 @@
       </div>
     </div>
   </div>
-
 <!-- bloque 2 -->
   <div id="contenedor_titulo_1">
     <div id="conte">
@@ -154,7 +206,7 @@
       </div>
     </div>
   </div>
-
+<!-- bloque 3 -->
   <div id="contenedor_titulo_1">
     <div id="conte">
       <div class="linea">
@@ -177,7 +229,7 @@
       </div>
     </div>
   </div>
-
+<!-- bloque 4 -->
   <div id="contenedor_titulo_1">
     <div id="conte">
       <div class="linea">
@@ -200,7 +252,7 @@
       </div>
     </div>
   </div>
-
+<!-- bloque 5 -->
   <div id="contenedor_titulo_1">
     <div id="conte">
       <div class="linea">
@@ -223,7 +275,7 @@
       </div>
     </div>
   </div>
-
+<!-- bloque 6 -->
   <div id="contenedor_titulo_1">
     <div id="conte">
       <div class="linea">
@@ -246,11 +298,34 @@
       </div>
     </div>
   </div>
+<!---- Fin de portada ---->
 </body>
+<!---- pie --->
+<footer>
+
+  <div id="contenedor_de_footer">
+    <div class="fot_titu">
+      Constan<span id="tine">tine</span>
+    </div>
+  </div>
+  <div>
+    <div class="fila_redes">
+      <div><a href="https://www.monographcomms.ca/">Reddit</a></div>
+      <div><a href="https://www.monographcomms.ca/">YouTube</a></div>
+      <div><a href="https://www.monographcomms.ca/">Git Hub</a></div>
+      <div><a href="https://www.monographcomms.ca/">Instagram</a></div>
+    </div>
+    <div class="fila_contacto">
+      <div><a href="https://www.monographcomms.ca/">Home</a></div>
+      <div><a href="https://www.monographcomms.ca/">About us</a></div>
+      <div><a href="https://www.monographcomms.ca/">Services</a></div>
+      <div><a href="https://www.monographcomms.ca/">Contact</a></div>
+    </div>
+  </div>
+</footer>
 </html>
 
 <!-- borrar bordes_del si empiezan a ir mal-->
 <!-- borrar todo despues de bordes_del si empiezan a ir mal-->
 <!-- .linea define el cuadrado grande -->
-
 
