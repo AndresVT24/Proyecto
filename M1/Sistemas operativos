@@ -9,3 +9,11 @@ pass:brian123 (editado)
 
 User: grupo4_sergio
 pass:sergio123 
+
+
+
+user::sudo ssh sba@52.169.181.173
+
+pass:: 1Q2w3e4r5t6y
+
+comando para iniciar:: sudo ssh ( user)@52.169.181.173
