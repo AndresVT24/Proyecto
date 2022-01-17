@@ -10,6 +10,10 @@ pass:brian123 (editado)
 User: grupo4_sergio
 pass:sergio123 
 
+User: grupo4_abigail
+pass: abigail123
+
+
 
 
 user::sudo ssh sba@52.169.181.173
