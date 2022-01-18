@@ -1,0 +1,173 @@
+div {
+    .grid-container
+        display: grid;
+        
+        background-color:
+        grid-template-columns: auto auto; 
+    
+    .grid-container div
+        background-color: crimson;
+        text-align: center;
+        color
+        }    
+
+#menu {
+    background-color: #7119D4;
+    padding: 1em;
+    grid-template-rows: 1fr 1fr;
+    height: 8em;
+    border-radius: 15px 50px;
+}
+
+.superior {
+    grid-row: 1;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.titulo {
+    grid-column:1 ;
+    text-align: left;
+    
+}
+
+.nombrejuego {
+    grid-column: 2;
+    
+
+}
+
+.nombrejuego p {
+    font-size: xx-large;
+    font-style: fantasy, monospace, none;
+    text-align: center;
+    color: white;
+}
+
+.icono {
+    background:  url("icono.png");
+    background-size: 50px;
+    background-repeat: no-repeat;
+    grid-column: 3;
+    background-position: right;
+    margin-right: 1.5em;
+}
+
+.inferior {
+    grid-row: 2;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#enlaces {
+    display: inline;
+    grid-column: 1;
+}
+div{
+    display: grid;
+}
+#enlaces a {
+    margin-right: 1.5em;
+}
+
+.lupa {
+    grid-column: 2;
+    background: url("lupa.png");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: right;
+    
+}
+
+.navegador {
+    grid-column: 3;
+    width: 7em;
+    height: 1.5em;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
+}
+}
+.content{
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 450px;
+
+
+}
+body{
+    background-color: rgb(0, 0, 0);
+}
+p {
+    color: white;
+    text-align: justify;
+    margin-left: 1em;
+}
+.r{
+    background-color: greenyellow;
+    width: 650px;
+    height: 320px;
+    grid-column: 1;
+}
+
+.l{
+    background-color: goldenrod;
+    width: 650px;
+    height: 320pxs;
+    grid-column: 2;
+}
+
+p{
+    text-align: center;
+}
+iframe{
+    margin-left: 2em;
+    justify-content: center;
+}
+.contenedor_de_footer{
+    display: grid;
+    height: 10em;
+      grid-template-rows: 1fr 1fr;
+}
+
+.fot_titu {
+      background-color: #8F55D4;
+      grid-row: 1;
+}
+
+.fot_titu p{
+      text-align: center;
+      font-family: Roboto,sans-serif,cursive;
+      font-size: 35px;
+      color: black;
+}
+
+p #constantine{
+      font-family: 'Yuji Mai', serif;
+}
+
+#contenedor_pie{
+      background-color: black ;
+      grid-row: 2;
+      display: inline;
+}
+
+#contenedor_pie a {
+      margin-right: 1.5em;
+      float: right;
+      margin-top: 1em;
+}
+
+#contenedor_pie p {
+    color: white;
+    text-align: left;
+    font-size: 1.2em;
+}
+span {
+    font-size: 2em;
+}
