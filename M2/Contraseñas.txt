@@ -1,0 +1,6 @@
+ 
+MYSQL
+
+USER: SERGIO
+PASSW: ptforvr0122012
+
