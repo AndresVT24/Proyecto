@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Yuji+Mai&display=swap" rel="stylesheet"> 
+  <meta charset="utf-8">
+  <title>Constantine</title>
+  <style type="text/css">
+    
+    #menu {
+    display: grid;
+    background-color: #7119D4;
+    padding: 1em;
+    grid-template-rows: 1fr 1fr;
+    height: 8em;
+    border-radius: 15px 50px;
+    }
+
+    .superior {
+        grid-row: 1;
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+
+    .nombrejuego {
+        grid-column: 2;
+    }
+
+    .nombrejuego p {
+        font-size: xx-large;
+        font-style: fantasy, monospace, none;
+        text-align: center;
+        color: white;
+    }
+
+    .icono {
+        background: url("icono.png");
+        background-size: 50px;
+        background-repeat: no-repeat;
+        grid-column: 3;
+        background-position: right;
+        margin-right: 1.5em;
+    }
+
+    .inferior {
+        grid-row: 2;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #enlaces {
+        display: inline;
+        grid-column: 1;
+    }
+
+
+    #enlaces a {
+        margin-right: 1.5em;
+    }
+
+    .lupa {
+        grid-column: 2;
+        background: url("lupa.png");
+        background-size: 1em;
+        background-repeat: no-repeat;
+        background-position: right;
+
+    }
+
+    .navegador {
+        grid-column: 3;
+        width: 7em;
+        height: 1.5em;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: black;
+    }
+
+    body{
+      background-color: #de2c31;
+    }
+    #conte {
+      border: 0px solid white;
+    }
+    #contenedor_titulo_1{
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 60%;
+      grid-gap: 0px;
+      padding-left:15%;
+      padding-right: 15%;
+    }
+    .linea{
+      display: grid;
+      grid-template-columns: 22% 4% 22% 4% 22% 4% 22%;
+      height: 60px;
+    }
+    .linea {
+      display: grid;
+      background-color: #de2c31;
+      text-align: center;
+      padding: 0%;
+      font-size: 42px;
+      border: 1px solid white;
+    }
+    .linea_delgada {
+      display: grid;
+      grid-template-columns: 22% 4% 22% 4% 22% 4% 22%;
+    }
+    .linea_delgada {
+      background-color: #de2c31;
+      text-align: center;
+      padding: 0%;
+      height: 20px;
+      font-size: 10px;
+      border-right: 1px solid white;
+      border-left: 1px solid white;
+    }
+
+    .bordes_peq{
+      border-right: 1px solid white;
+      border-left: 1px solid white;
+
+    }
+    .border_gra{
+      border: 1px solid white;
+    }
+    .border_de{
+      border: 1px solid white;
+
+    }
+
+    .bordes_del_peq{
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+    }
+
+
+    .bordes_del_iz_fin{
+      border-bottom: 1px solid white;
+    }
+    .bordes_del_peq_fin{
+      border-bottom: 1px solid white;
+      border-right: 1px solid white;
+      border-left: 1px solid white;
+    }
+    .bordes_del_gra_fin{
+      border-bottom: 1px solid white;
+    }
+    .bordes_del_de_fin{
+      border-bottom: 1px solid white;
+    }
+    /* estilo de bloques con texto */
+    .bordes_gra_nom_1{
+      z-index: 1;
+      color: black;
+      font-family: roboto;
+      font-size: 10px;
+      text-align: left;
+      margin: 0px;
+    }
+    .bordes_gra_nom_2{
+      z-index: 1;
+      color: black;
+      font-family: roboto;
+      font-size: 10px;
+      text-align: left;
+      margin: 0px;
+    }
+
+    .bordes_iz_nom_1{
+      z-index: 1;
+      box-sizing: border-box;
+      display: inline-block;
+      font-family: Roboto;
+      font-size: 60px;
+      font-weight: 400;
+      line-height: 68px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 0px;
+      text-align: justify;
+      color: black;
+
+    }
+    .bordes_iz_nom_2{
+      z-index: 1;
+      display: inline-block;
+      font-family: Roboto;
+      font-size: 60px;
+      font-weight: 400;
+      line-height: 68px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 0px;
+      text-align: justify;
+      color: black;
+    }
+    /**************************************/
+    /* estilo cuerpo */
+    .texto_img{
+      text-align: center;
+      color: black;
+      background-color: green;
+    }
+    #contenedor_cuerpo_his{
+      display: flex;
+      justify-content: center;
+      column-gap: 5em;
+      padding-top:150px;
+    }
+    .foto_1{
+      height: 10em;
+      width: 10em;
+    }
+    .cuento_1{
+      height: 10em;
+      width: 10em;
+      padding-bottom: 100px;
+      border: 20px;
+
+    }
+    .foto_2{
+      height: 10em;
+      width: 10em;
+    }
+    .cuento_2{
+      height: 10em;
+      width: 10em;
+      padding-bottom: 100px;
+    }
+    .foto_3{
+      height: 10em;
+      width: 10em;
+    }
+    .cuento_3{
+      height: 10em;
+      width: 10em;
+      padding-bottom: 100px;
+    }
+
+    /*************** bloque 2*/
+    #contenedor_cuerpo_his_2{
+      display: flex;
+      justify-content: center;
+      column-gap: 5em;
+      padding-top:350px;
+    }
+    .foto_4{
+      height: 10em;
+      width: 10em;
+      padding-top: 150px;
+    }
+    .cuento_4{
+      height: 10em;
+      width: 10em;
+      padding-bottom: 100px;
+    }
+    .foto_5{
+      height: 10em;
+      width: 10em;
+    }
+    .cuento_5{
+      height: 10em;
+      width: 10em;
+      padding-bottom: 100px;
+    }
+
+
+
+    /**************************************/
+
+
+    /* estilo de pie*/
+    .contenedor_de_footer{
+      display: grid;
+      height: 10em;
+      grid-template-rows: 1fr 1fr;
+      padding-top: 500px;
+    }
+
+    .fot_titu {
+      background-color: #8F55D4;
+      grid-row: 1;
+}
+
+    .fot_titu p{
+      text-align: center;
+      font-family: Roboto,sans-serif,cursive;
+      font-size: 35px;
+      color: black;
+}
+
+    p #tine{
+      font-family: 'Yuji Mai', serif;
+}
+
+    #contenedor_pie{
+      background-color: black ;
+      grid-row: 2;
+      display: inline;
+}
+
+    #contenedor_pie a {
+      margin-right: 1.5em;
+      float: right;
+      margin-top: 1em;
+}
+
+    #contenedor_pie p {
+      color: white;
+      text-align: left;
+      font-size: 1.2em;
+    }
+    /**************************************/
+    .bordes_gra_nom_3{
+      color: black;
+      font-family: roboto;
+      font-size: 8px;
+      text-align: left;
+      margin: 0px;
+    }
+
+    /**************************************/
+  </style>
+
+</head>
+
+<header>
+    <div id="menu">
+        <div class="superior">
+            <div class="nombrejuego"><p>Live Your Adventure</p></div>
+            <div class="icono">
+            </div>
+        </div>
+        <div class="inferior">
+            <div id="enlaces">
+                <a href="./">Pagina Principal</a>
+                <a href="">Videos</a>
+                <a href="">Contacto</a>
+                <a href="./About Us.html">About Us</a>
+            </div>
+            <div class="lupa"></div>
+            <div class="navegador">
+                <input type="text" name="navegador">
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<body>
+  <!---- Espacio en blanco ---->
+
+  <!---- **************************************---->
+
+  <!---- Portada ---->  
+  <div id="contenedor_titulo_1">
+    <div id="conte">
+      <div class="linea">
+        <div class="bordes_iz"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra_nom_1"><p>Brockmann</p></div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_de"> </div>
+      </div>
+      <div class="linea_delgada">
+        <div class="bordes_del_iz"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_gra"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_gra"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_de"> </div>
+      </div>
+    </div>
+  </div>
+<!-- bloque 2 -->
+  <div id="contenedor_titulo_1">
+    <div id="conte">
+      <div class="linea">
+        <div class="bordes_iz"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_de"> </div>
+      </div>
+      <div class="linea_delgada">
+        <div class="bordes_del_iz"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_gra"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_gra"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_de"> </div>
+      </div>
+    </div>
+  </div>
+<!-- bloque 3 -->
+  <div id="contenedor_titulo_1">
+    <div id="conte">
+      <div class="linea">
+        <div class="bordes_iz_nom_1">Constantine</div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_de"> </div>
+      </div>
+      <div class="linea_delgada">
+        <div class="bordes_del_iz"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_gra"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_gra"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_de"> </div>
+      </div>
+    </div>
+  </div>
+<!-- bloque 4 -->
+  <div id="contenedor_titulo_1">
+    <div id="conte">
+      <div class="linea">
+        <div class="bordes_iz"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra_nom_2"><p>Una aventura </p></div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_de"> </div>
+      </div>
+      <div class="linea_delgada">
+        <div class="bordes_del_iz"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_gra"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_gra"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_de"> </div>
+      </div>
+    </div>
+  </div>
+<!-- bloque 5 -->
+  <div id="contenedor_titulo_1">
+    <div id="conte">
+      <div class="linea">
+        <div class="bordes_iz_nom_2">Vol.I</div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_de"> </div>
+      </div>
+      <div class="linea_delgada">
+        <div class="bordes_del_iz"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_gra"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_gra"> </div>
+        <div class="bordes_del_peq"> </div>
+        <div class="bordes_del_de"> </div>
+      </div>
+    </div>
+  </div>
+<!-- bloque 6 -->
+  <div id="contenedor_titulo_1">
+    <div id="conte">
+      <div class="linea">
+        <div class="bordes_iz"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra"> </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_gra_nom_3">Sergio Gomez<br>Andres Villca<br>Brian Uscata<br>Abigail 
+        </div>
+        <div class="bordes_peq"> </div>
+        <div class="bordes_de"> </div>
+      </div>
+    </div>
+  </div>
+<!---- Fin de portada ---->
+<!---- Explicacion del juego ---->
+<div id="contenedor_cuerpo_his">
+  <div class="cuento_1">
+    <img class="foto_1" src="/home/super/Escriptori/proyecto_css_flex/foto_1.jpg">
+    <div class="conte_his">
+      <div class="texto_img">
+        <p>Los pingüinos son aquellas aves que se engloban dentro de la familia Spheniscidae y a su vez dentro del orden de los Sphenisciformes.<br>Se trata de un grupo de aves marinas no voladoras, en el que se pueden diferenciar hasta 18 especies diferentes las cuales que se distribuyen</p>
+      </div>
+    </div>
+  </div>
+  <div class="cuento_2">
+    <img class="foto_2" src="/home/super/Escriptori/proyecto_css_flex/foto_3.jpg">
+    <div class="conte_his">
+      <div class="texto_img">
+        <p>Los pingüinos son aquellas aves que se engloban dentro de la familia Spheniscidae y a su vez dentro del orden de los Sphenisciformes.<br>Se trata de un grupo de aves marinas no voladoras, en el que se pueden diferenciar hasta 18 especies diferentes las cuales que se distribuyen</p>
+      </div>
+    </div>
+  </div>  
+  <div class="cuento_3">
+    <img class="foto_3" src="/home/super/Escriptori/proyecto_css_flex/foto_2.jpg">
+    <div class="conte_his">
+      <div class="texto_img">
+        <p>Los pingüinos son aquellas aves que se engloban dentro de la familia Spheniscidae y a su vez dentro del orden de los Sphenisciformes.<br>Se trata de un grupo de aves marinas no voladoras, en el que se pueden diferenciar hasta 18 especies diferentes las cuales que se distribuyen</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- linea de historias 2 --->
+<div id="contenedor_cuerpo_his_2">
+  <div class="cuento_2">
+    <img class="foto_2" src="/home/super/Escriptori/proyecto_css_flex/foto_3.jpg">
+    <div class="conte_his">
+      <div class="texto_img">
+        <p>Los pingüinos son aquellas aves que se engloban dentro de la familia Spheniscidae y a su vez dentro del orden de los Sphenisciformes.<br>Se trata de un grupo de aves marinas no voladoras, en el que se pueden diferenciar hasta 18 especies diferentes las cuales que se distribuyen</p>
+      </div>
+    </div>
+  </div>  
+  <div class="cuento_3">
+    <img class="foto_3" src="/home/super/Escriptori/proyecto_css_flex/foto_2.jpg">
+    <div class="conte_his">
+      <div class="texto_img">
+        <p>Los pingüinos son aquellas aves que se engloban dentro de la familia Spheniscidae y a su vez dentro del orden de los Sphenisciformes.<br>Se trata de un grupo de aves marinas no voladoras, en el que se pueden diferenciar hasta 18 especies diferentes las cuales que se distribuyen</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<!---- pie --->
+
+<footer>
+    <div class="contenedor_de_footer">
+        <div class="fot_titu">
+          <p>Constan<span id="tine">tine</span></p>
+        </div>
+        <div id ="contenedor_pie">
+              <a href="https://www.instagram.com/?hl=es%22%3E<img src="instagram.png" width="35px" height="35px"></a>
+              <a href="https://www.youtube.com/%22%3E<img src="youtube.png" width="35px" height="35px"></a>
+              <a href="https://github.com/%22%3E<img src="github.png" width="35px" height="35px"></a>
+              <a href="https://twitter.com/home?lang=es%22%3E<img src="twitter.png" width="35px" height="35px"></a>
+            <p class="derechos"><img src="copyright.png" width="25px" height="25px">Copyright</p>
+        </div>
+    </div>
+</footer>
+
+</html>
+
+<!-- borrar bordes_del si empiezan a ir mal-->
+<!-- borrar todo despues de bordes_del si empiezan a ir mal-->
+<!-- .linea define el cuadrado grande -->
