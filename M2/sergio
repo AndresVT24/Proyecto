@@ -1,1 +1,59 @@
  
+use LIVE_YOUR_ADVENTURE;
+insert into ADVENTURE (ID_ADVENTURE,name,description,user_modification,user_creation,date_creation,date_modification)
+values (default, "Save The Princess","Debes de salvar a la princesa pero tus desiciones pueden cambiar el final de la historia. Te encontraras obstaculos y monstruos",current_user(),"Sergio Gomez","18/01/2022",current_date()),
+(default, "VIRTUAL_WORLD","Debes de tomar decisiones en un mundo virtual en el cual te has quedado atrapado mientras dormías para poder salir deberás de enfrentarte a dificultades y diferentes opciones",current_user(),"Sergio Gomez","18/01/2022",current_date()),
+(default, "THE MOVE","Unas hermanas deben de tomar decisiones a la hora de mudarse ",current_user(),"Sergio Gomez","18/01/2022",current_date()),
+(default, "THE DAMNED FOREST","Un personaje que debe tomar decisiones en un bosque maldito¿Conseguirás que sobreviva con tus acciones? ",current_user(),"Sergio Gomez","18/01/2022",current_date());
+
+/*Pasos de la aventura*/
+
+
+insert into STEP (description,end_step,user_creation,date_creation)
+values("Le suena la alarma al heroe!",0,current_user(),curdate()),
+("Se ha dormido y no puede ir a su aventura",1,current_user(),curdate()),
+("El heroe logra levantarse exitosamente,que deberia hacer?",0,current_user(),curdate()),
+("El  heroe ha decidido ser sabio y no correr muchos peligros por nada",1,current_user(),curdate()),
+("El heroe se encuentra con un monstruo! Que deberia hacer?",0,current_user(),curdate()),
+("El heroe se da cuenta que no es muy fuerte(él mismo)",1,current_user(),curdate()),
+("El heroe se da cuenta de que la princesa no vale la pena y se va a tomar unas cervezas con el monstruo",1current_user(),curdate()),
+("El heroe tiene mucha suerte, y logra entrar al castillo sin problemas que hace?",0,current_user(),curdate()),
+("Al parecer al heroe se le olvido que no iba equipado murió tragicamente",1,current_user(),curdate()),
+("Se ve que el monstruo es lento y logra salvar a la princesa",1,current_user(),curdate());
+
+(""current_user(),curdate()),
+
+/*Opciones de la aventura*/
+
+
+insert into LIVE_YOUR_ADVENTURE.OPTION (id_last_step,id_next_step,description,end_step,user_creation,date_creation,answer)
+values(1,2,"Apaga la alarma porque quiere dormir",current_user(),curdate(),current_date(),"Se hace tarde y no se da cuenta"),
+(1,3,"Se levanta de la cama como dios manda",current_user(),curdate(),current_date(),"El heroe se despierta con un gran esfuerzo"),
+/*Paso */
+
+(3,4,"Decide no ir a por la princesa, que vaya otro, hay muchos peces en el mar",current_user(),curdate(),current_date(),"El héroe vuelve a su casa y se apunta a Tinder los heroes también necesitan compañia"),
+/*Paso */
+(3,5,"El heroe se equipa apropiadamente y sale a la aventura",current_user(),curdate(),current_date(),""),
+/*Paso */
+(3,8,"El heroe no se equipa, ya que es demasiado fuerte, no tendra problemas",current_user(),curdate(),current_date(),"Encuentra un castillo y ..."),
+/*Paso */
+
+(5,6,"Decide luchar valerosamente",current_user(),curdate(),current_date()),"Se da cuenta que no es muy fuerte y el monstruo le arranca la cabeza de un manotazo"),
+(5,7,"Decide intentar hacerse amigo del monstruo",current_user(),curdate(),current_date(),"El heroe se da cuenta que la vida es muy corta se va a tomar unas cervezas con el monstruo "),
+(5,8,"Decide correr hacia la torre de la princesa",current_user(),curdate(),current_date(),"Y al final..."),
+/*Paso */
+
+(8,9,"Busca al jefe final para matarle",current_user(),curdate(),current_date(),"Al parecer al heroe se le olvido que no iba equipado... Murio tragicamente"),
+(8,10,"Ir hacia la celda de la princesa",current_user(),curdate(),current_date(),"Parece ser que esta celda no es la de la princesa, el hero cayo en una trampa");
+
+
+
+
+
+
+
+
+insert into LIVE_YOUR_ADVENTURE.RECORD (ID_RECORD,id_game,date,date_creation,date_modification,user_creation,user_modification)
+values(default,(),curdate(),current_date());
+
+("jjjaj",current_user(),curdate(),current_date());
