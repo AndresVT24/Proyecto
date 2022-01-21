@@ -1,7 +1,7 @@
 -- -----------------------------------------------------
 -- Schema LIVE_YOUR_ADVENTURE
 -- -----------------------------------------------------
-DROP DATABASE IF EXISTS LIVE_YOUR_ADVENTURE;
+DROP DATABASE IF EXISTS LIVE_YOUR_ADVENTURE; /*FALTA LA id_adventure (entidad debil), la foreign key*/
 CREATE DATABASE IF NOT EXISTS LIVE_YOUR_ADVENTURE;
 USE LIVE_YOUR_ADVENTURE ;
 
@@ -9,152 +9,96 @@ USE LIVE_YOUR_ADVENTURE ;
 -- Table `LIVE_YOUR_ADVENTURE`.`player`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS LIVE_YOUR_ADVENTURE.player (
-  id_player INT NOT NULL AUTO_INCREMENT,
-  password VARCHAR(45) NOT NULL,
-  username VARCHAR(45) NOT NULL,
-  user_creation VARCHAR(45) NULL DEFAULT NULL,
-  user_modification VARCHAR(45) NULL DEFAULT NULL,
-  date_creation DATETIME NULL DEFAULT NULL,
-  date_modification DATETIME NULL DEFAULT NULL,
-  UNIQUE INDEX username_unique (username ASC) VISIBLE,
-  UNIQUE INDEX id_player_unique (id_player ASC) VISIBLE);
+  id_player INT,
+  password VARCHAR(45),
+  username VARCHAR(45),
+  user_creation VARCHAR(45),
+  user_modification VARCHAR(45),
+  date_creation DATETIME,
+  date_modification DATETIME);
 
 -- -----------------------------------------------------
 -- Table `LIVE_YOUR_ADVENTURE`.`adventure`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS LIVE_YOUR_ADVENTURE.adventure (
-  id_adventure INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(500) NOT NULL,
-  description VARCHAR(500) NOT NULL,
-  user_modification VARCHAR(45) NULL DEFAULT NULL,
-  user_creation VARCHAR(45) NULL DEFAULT NULL,
-  date_creation DATETIME NULL DEFAULT NULL,
-  date_modification DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (id_adventure),
-  UNIQUE INDEX id_adventure_unique (id_adventure ASC) VISIBLE);
+  id_adventure INT,
+  name VARCHAR(500),
+  description VARCHAR(500),
+  user_modification VARCHAR(45),
+  user_creation VARCHAR(45),
+  date_creation DATETIME,
+  date_modification DATETIME);
   
   -- -----------------------------------------------------
 -- Table `LIVE_YOUR_ADVENTURE`.`step`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS LIVE_YOUR_ADVENTURE.step (
-  id_step INT NOT NULL AUTO_INCREMENT,
-  description VARCHAR(500) NOT NULL,
-  end_step BIT(1) NULL DEFAULT NULL,
-  user_creation VARCHAR(45) NULL DEFAULT NULL,
-  user_modification VARCHAR(45) NULL DEFAULT NULL,
-  date_creation DATETIME NULL DEFAULT NULL,
-  date_modification DATETIME NULL DEFAULT NULL,
-  id_adventure INT NOT NULL,
-  PRIMARY KEY (id_step),
-  UNIQUE INDEX id_step_unique (id_step ASC) VISIBLE,
-  INDEX FK_STEP_ADVENTURE (id_adventure ASC) VISIBLE,
-  CONSTRAINT FK_STEP_ADVENTURE
-    FOREIGN KEY (id_adventure)
-    REFERENCES LIVE_YOUR_ADVENTURE.adventure (id_adventure));
+  id_step INT,
+  description VARCHAR(500),
+  end_step BIT(1),
+  user_creation VARCHAR(45),
+  user_modification VARCHAR(45),
+  date_creation DATETIME,
+  date_modification DATETIME,
+  id_adventure INT);
 
 -- -----------------------------------------------------
 -- Table `LIVE_YOUR_ADVENTURE`.`option`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS LIVE_YOUR_ADVENTURE.option (
-  id_option INT NOT NULL AUTO_INCREMENT,
-  id_last_step INT NOT NULL,
-  id_next_step INT NOT NULL,
-  description VARCHAR(500) NOT NULL,
-  user_modification VARCHAR(45) NULL DEFAULT NULL,
-  user_creation VARCHAR(45) NULL DEFAULT NULL,
-  date_modification DATETIME NULL DEFAULT NULL,
-  date_creation DATETIME NULL DEFAULT NULL,
-  answer VARCHAR(500) NULL DEFAULT NULL,
-  PRIMARY KEY (id_option),
-  UNIQUE INDEX id_option_unique (id_option ASC) VISIBLE,
-  INDEX FK_OPTION_STEP (id_last_step ASC) VISIBLE,
-  INDEX FK_OPTION_STEP2 (id_next_step ASC) VISIBLE,
-  CONSTRAINT FK_OPTION_STEP
-    FOREIGN KEY (id_last_step)
-    REFERENCES LIVE_YOUR_ADVENTURE.step (id_step),
-  CONSTRAINT FK_OPTION_STEP2
-    FOREIGN KEY (id_next_step)
-    REFERENCES LIVE_YOUR_ADVENTURE.step (id_step));
+  id_option INT,
+  id_last_step INT,
+  id_next_step INT,
+  description VARCHAR(500),
+  user_modification VARCHAR(45),
+  user_creation VARCHAR(45),
+  date_modification DATETIME,
+  date_creation DATETIME,
+  answer VARCHAR(500));
 
 -- -----------------------------------------------------
 -- Table `LIVE_YOUR_ADVENTURE`.`character`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS LIVE_YOUR_ADVENTURE.character (
-  id_character INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(45) NOT NULL,
-  description VARCHAR(500) NOT NULL,
-  user_creation VARCHAR(45) NULL DEFAULT NULL,
-  user_modification VARCHAR(45) NULL DEFAULT NULL,
-  date_creation DATETIME NULL DEFAULT NULL,
-  date_modification DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (id_character),
-  UNIQUE INDEX id_character_unique (id_character ASC) VISIBLE);
+  id_character INT,
+  name VARCHAR(45),
+  description VARCHAR(500),
+  user_creation VARCHAR(45),
+  user_modification VARCHAR(45),
+  date_creation DATETIME,
+  date_modification DATETIME);
 
 -- -----------------------------------------------------
 -- Table `LIVE_YOUR_ADVENTURE`.`game`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS LIVE_YOUR_ADVENTURE.game (
-  id_game INT NOT NULL AUTO_INCREMENT,
-  date DATE NOT NULL,
-  user_creation VARCHAR(45) NULL DEFAULT NULL,
-  user_modification VARCHAR(45) NULL DEFAULT NULL,
-  date_creation DATETIME NULL DEFAULT NULL,
-  date_modification DATETIME NULL DEFAULT NULL,
-  id_adventure INT NOT NULL,
-  id_player INT NOT NULL,
-  id_character INT NOT NULL,
-  PRIMARY KEY (id_game),
-  UNIQUE INDEX id_game_unique (id_game ASC) VISIBLE,
-  INDEX player_idx (id_player ASC) VISIBLE,
-  INDEX character_idx (id_character ASC) VISIBLE,
-  INDEX FK_GAME_ADVENTURE_idx (id_adventure ASC) VISIBLE,
-  CONSTRAINT FK_GAME_ADVENTURE
-    FOREIGN KEY (id_adventure)
-    REFERENCES LIVE_YOUR_ADVENTURE.adventure (id_adventure),
-  CONSTRAINT FK_GAME_CHARACTER
-    FOREIGN KEY (id_character)
-    REFERENCES LIVE_YOUR_ADVENTURE.character (id_character),
-  CONSTRAINT FK_GAME_PLAYER
-    FOREIGN KEY (id_player)
-    REFERENCES LIVE_YOUR_ADVENTURE.player (id_player));
+  id_game INT,
+  date DATE,
+  user_creation VARCHAR(45),
+  user_modification VARCHAR(45),
+  date_creation DATETIME,
+  date_modification DATETIME,
+  id_adventure INT,
+  id_player INT,
+  id_character INT);
 
 -- -----------------------------------------------------
 -- Table `LIVE_YOUR_ADVENTURE`.`record`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS LIVE_YOUR_ADVENTURE.record (
-  id_record INT NOT NULL AUTO_INCREMENT,
-  id_game INT NOT NULL,
-  id_option INT NOT NULL,
-  id_step INT NOT NULL,
-  date DATETIME NOT NULL,
-  date_creation DATETIME NULL DEFAULT NULL,
-  date_modification DATETIME NULL DEFAULT NULL,
-  user_creation VARCHAR(45) NULL DEFAULT NULL,
-  user_modification VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (id_record),
-  UNIQUE INDEX id_record_unique (id_record ASC) VISIBLE,
-  INDEX game_idx (id_game ASC) VISIBLE,
-  CONSTRAINT FK_RECORD_GAME
-    FOREIGN KEY (id_game)
-    REFERENCES LIVE_YOUR_ADVENTURE.game (id_game),
-  CONSTRAINT FK_RECORD_OPTION
-    FOREIGN KEY (id_option)
-    REFERENCES LIVE_YOUR_ADVENTURE.option (id_option), 
-  CONSTRAINT FK_RECORD_STEP 
-	FOREIGN KEY (id_step) 
-    REFERENCES LIVE_YOUR_ADVENTURE.step (id_step));
+  id_record INT,
+  id_game INT,
+  id_option INT,
+  id_step INT,
+  date DATETIME,
+  date_creation DATETIME,
+  date_modification DATETIME,
+  user_creation VARCHAR(45),
+  user_modification VARCHAR(45));
 
 -- -----------------------------------------------------
 -- Table `LIVE_YOUR_ADVENTURE`.`adventure_character`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS LIVE_YOUR_ADVENTURE.adventure_character (
-  id_character INT NOT NULL AUTO_INCREMENT,
-  id_adventure INT NOT NULL,
-  PRIMARY KEY (id_character, id_adventure),
-  INDEX adventure_idx (id_adventure ASC) VISIBLE,
-  CONSTRAINT FK_ADVENTURE_CHARACTER_ADVENTURE
-    FOREIGN KEY (id_adventure)
-    REFERENCES LIVE_YOUR_ADVENTURE.adventure (id_adventure),
-  CONSTRAINT FK_ADVENTURE_CHARACTER_CHARACTER
-    FOREIGN KEY (id_character)
-    REFERENCES LIVE_YOUR_ADVENTURE.character (id_character));
+  id_character INT,
+  id_adventure INT);
