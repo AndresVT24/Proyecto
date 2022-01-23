@@ -1,0 +1,210 @@
+div{
+    display: grid;
+}
+
+#menu {
+    background-color: #7119D4;
+    padding: 1em;
+    grid-template-rows: 1fr 1fr;
+    height: 8em;
+    border-radius: 50px 15px;
+    border: solid black;
+}
+
+.superior {
+    grid-row: 1;
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+.titulo {
+    grid-column:1 ;
+}
+
+.nombrejuego {
+    grid-column: 2;
+    font-family: 'Yuji Mai',serif,sans-serif;
+    font-size: 0.7em;
+}
+
+.nombrejuego p {
+    font-size: xx-large;
+    font-style: fantasy, monospace, none;
+    text-align: center;
+    color: white;
+}
+
+.icono {
+    grid-column: 3;
+}
+
+#icono {
+    position: fixed;
+    height: 4em;
+    float: right;
+    margin-left: 24em;
+}
+
+.inferior {
+    grid-row: 2;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#enlaces {
+    display: inline;
+    grid-column: 1;
+}
+
+
+#enlaces a {
+    margin-right: 1.5em;
+}
+
+.lupa {
+    grid-column: 2;
+    background: url("../Imágenes/lupa.png");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: right;
+    
+}
+
+.navegador {
+    grid-column: 3;
+    width: 7em;
+    height: 1.5em;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+body {
+    background: linear-gradient(45deg, red, blue);
+}
+
+.subcontainer p {
+    font-style: italic;
+    font-size: large;
+    color: white;
+}
+
+h1 {
+    color: black;
+}
+
+div {
+    display: grid;
+}
+
+.img1 {
+    grid-area: 1/1;
+    background: url("../Imágenes/Brian.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 300px;
+}
+
+.name1 {
+    grid-area: 1/2;
+    text-align: justify;
+    width: 650px;
+}
+
+.img2 {
+    grid-area: 2/1;
+    background: url("../Imágenes/Andres.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 225px;
+}
+
+.name2 {
+    grid-area: 2/2;
+    grid-area: ;
+    text-align: justify;
+    width: 650px;
+}
+
+.img3 {
+    background: url("../Imágenes/Sergio.jpg");
+    grid-area: 3/1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 225px;
+}
+
+.name3 {
+    grid-area: 3/2;
+    text-align: justify;
+    width: 650px;
+}
+
+.img4 {
+    grid-area: 4/1;
+    background: url("../Imágenes/Abigail.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 275px;
+}
+
+.name4 {
+    grid-area: 4/2;
+    text-align: justify;
+    width: 650px;
+}
+
+div .subcontainer {
+    padding: 50px;
+}
+
+p {
+    text-align: justify;
+}
+
+.contenedor_de_footer{
+    display: grid;
+    height: 10em;
+      grid-template-rows: 1fr 1fr;
+}
+
+
+.fot_titu{
+      text-align: center;
+      font-family: Roboto,sans-serif,cursive;
+      font-size: 35px;
+      color: black;
+      background-color: #8F55D4;
+      grid-row: 1;
+}
+
+#tine{
+      font-family: 'Yuji Mai', serif;
+}
+
+#contenedor_pie{
+      background-color: black ;
+      grid-row: 2;
+      display: inline;
+}
+
+#contenedor_pie a {
+      margin-right: 1.5em;
+      float: right;
+      margin-top: 1em;
+}
+
+#contenedor_pie p {
+    color: white;
+    text-align: left;
+    font-size: 1.2em;
+}

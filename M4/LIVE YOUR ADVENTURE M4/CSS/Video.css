@@ -1,0 +1,165 @@
+div {
+display: grid;
+}
+
+#menu {
+    background-color: #7119D4;
+    padding: 1em;
+    grid-template-rows: 1fr 1fr ;
+    height: 8em;
+    border-radius: 50px 15px; 
+    border: solid black;/*Cambio borde*/
+}
+
+.superior {
+    grid-row: 1;
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+.titulo {
+    grid-column:1 ;
+}
+
+.nombrejuego {
+    grid-column: 2;
+    font-family: 'Yuji Mai',serif,sans-serif;
+    font-size: 0.7em;
+}
+
+.nombrejuego>p {
+    font-size: xx-large;
+    font-style: fantasy, monospace, none;
+    text-align: center;
+    color: white;
+}
+
+.icono {
+    grid-column: 3;
+}
+
+#icono {
+    position: fixed;
+    height: 4em;
+    float: right;
+    margin-left: 24em;
+}
+
+.inferior {
+    grid-row: 2;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#enlaces {
+    display: inline;
+    grid-column: 1;
+}
+
+
+#enlaces>a {
+    margin-right: 1.5em;
+}
+
+.lupa {
+    grid-column: 2;
+    background: url("../Imágenes/lupa.png");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: right;
+    
+}
+
+.navegador {
+    grid-column: 3;
+    width: 7em;
+    height: 1.5em;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.content{
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 450px;
+
+}
+
+body{
+    background: linear-gradient(45deg, red, blue);
+}
+
+p {
+    color: white;
+    text-align: justify;
+    margin-left: 1em;
+}
+
+#letra {
+    font-size: 2em;
+}
+
+.r{
+    width: 650px;
+    height: 320px;
+    grid-column: 1;
+}
+
+.l{
+    width: 650px;
+    height: 320pxs;
+    grid-column: 2;
+}
+
+p{
+    text-align: center;
+}
+
+iframe{
+    margin-left: 2em;
+    justify-content: center;
+}
+
+/*Principio del footer*/
+.contenedor_de_footer{
+    display: grid;
+    height: 10em;
+    grid-template-rows: 1fr 1fr;
+}
+
+.fot_titu{
+    text-align: center;
+    font-family: Roboto,sans-serif,cursive;
+    font-size: 35px;
+    color: black;
+    background-color: #8F55D4;
+    grid-row: 1;
+}
+
+#tine{
+    font-family: 'Yuji Mai', serif;
+}
+
+#contenedor_pie{
+    background-color: black ;
+    grid-row: 2;
+    display: inline;
+}
+
+#contenedor_pie>a {
+    margin-right: 1.5em;
+    float: right;
+    margin-top: 1em;
+}
+
+#contenedor_pie>p {
+    color: white;
+    text-align: left;
+    font-size: 1.2em;
+}
+/*Final del footer*/
